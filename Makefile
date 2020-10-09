@@ -56,7 +56,7 @@ folder = bin										# Setting up $name variable
 # |---------------------------------------------------------------------------------|
 build: debugMerge																							# 4.1                 |
 	@cd ./$(folder); \																					# 4.2                 |
-	 pdfcslatex $(aux).tex; \																		# 4.3                 | <--- set your LaTeX compiler, pdfcslatex for MiXTeX base, for me, pdflatex
+	 pdflatex $(aux).tex; \		  																# 4.3                 | <--- set your LaTeX compiler, pdfcslatex for MiXTeX base, for me, pdflatex
 	 cd ../; \																									# 4.4                 |
 	 mv ./$(folder)/$(aux).pdf $(name).pdf											# 4.5                 |
 # |---------------------------------------------------------------------------------|
@@ -90,16 +90,16 @@ encrypt: build                                                # 5.1									|
 debugTeX:																															# 1.1																				|
 	@mkdir -p $(folder); \																							# 1.2																				|
 	 echo " " > ./$(folder)/obsah.tex; \																# 1.3																				|
-	 python3.7 aux.py 2 projekt1.tex >> ./$(folder)/projekt1.tex; \			# 1.4																				| <--- set your python version (3.7 base, for me 3.9)
-	 python3.7 aux.py 2 projekt2.tex >> ./$(folder)/projekt2.tex; \			# 1.5																				| <--- set your python version (3.7 base, for me 3.9)
+	 python3.9 aux.py 2 projekt1.tex >> ./$(folder)/projekt1.tex; \			# 1.4																				| <--- set your python version (3.7 base, for me 3.9)
+	 python3.9 aux.py 2 projekt2.tex >> ./$(folder)/projekt2.tex; \			# 1.5																				| <--- set your python version (3.7 base, for me 3.9)
 	 echo " " > ./$(folder)/$(aux).bib; \																# 1.6																				|
-	 python3 aux.py 1 literatura.bib >> ./$(folder)/$(aux).bib; \			  # 1.7																				| <--- set your python version (3 base, for me 3.9)
+	 python3.9 aux.py 1 literatura.bib >> ./$(folder)/$(aux).bib; \			# 1.7																				| <--- set your python version (3 base, for me 3.9)
 	 cp -f ./projekt.tex ./$(folder)/$(aux).tex; \											# 1.8																				|
 	 cp -f ./titulniStrana.tex ./$(folder); \														# 1.9																				|
 	 cp -f ./seznamZkratek.tex ./$(folder); \														# 1.10																			|
 	 cd ./$(folder); \																									# 1.11																			|
 	 ! [ -d ./pics ] && ln -s ../pics pics;\														# 1.12																			|
-	 pdfcslatex $(aux).tex; \																						# 1.13																			| <--- set your LaTeX compiler, pdfcslatex for MiXTeX base, for me, pdflatex
+	 pdflatex $(aux).tex; \																						  # 1.13																			| <--- set your LaTeX compiler, pdfcslatex for MiXTeX base, for me, pdflatex
 	 cd ../;																														# 1.14																			|
 # |---------------------------------------------------------------------------------------------------------------|
 
@@ -123,7 +123,7 @@ debugBib: debugTeX										# 2.1                  |
 # |----------------------------------------------------------|
 debugMerge: debugBib									# 3.1									 |
 	@cd ./$(folder); \									# 3.2                  |
-	 pdfcslatex $(aux).tex; \						# 3.3                  | <--- set your LaTeX compiler, pdfcslatex for MiXTeX base, for me, pdflatex
+	 pdflatex $(aux).tex; \	  					# 3.3                  | <--- set your LaTeX compiler, pdfcslatex for MiXTeX base, for me, pdflatex
 	 cd ../;														# 3.4                  |
 # |----------------------------------------------------------|
 
