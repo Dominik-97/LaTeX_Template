@@ -1,0 +1,121 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{ucs}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[left=3.5cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{gensymb,marvosym}
+\usepackage{times}
+\usepackage{tabularx}
+\usepackage{graphicx}
+
+% Více řádků v jednom pro tabulku
+\usepackage{multirow}
+
+% Pro tečkovanou čáru pro podpis
+\usepackage{arydshln}
+
+\usepackage[none]{hyphenat} \sloppy
+\clubpenalty 10000
+\widowpenalty 10000
+
+% Nastavení řádkování
+\usepackage{setspace} \onehalfspacing
+
+\usepackage{enumerate}
+
+% === Nastavení hlavních proměnných ===
+\newcommand{\autor}{}
+\newcommand{\skola}{}
+\newcommand{\fakulta}{}
+\newcommand{\nazev}{}
+\newcommand{\typPrace}{}
+\newcommand{\vedouciPrace}{}
+
+% Nastavení prolinkování odkazů v dokumentu
+\usepackage[pdftex,
+            pdfauthor={Jméno},
+            pdftitle={Title},
+            pdfsubject={},
+            pdfkeywords={},
+            pdfproducer={Univerzita},
+            pdfcreator={pdflatex}]{hyperref}
+
+\hypersetup{
+    colorlinks = false,
+    hidelinks
+}
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+% Nastavení cesty k obrázkům
+\graphicspath{{pics/}}
+
+% Funkce pro vkládání grafů
+\usepackage{float}
+\newfloat{graf}{hbtp}{ext}
+\floatname{graf}{Graf}
+
+% Pojmenovaní obrázku
+\usepackage{caption}
+\captionsetup[figure]{name=Obr.}
+
+
+% === Začátek dokumentu ===
+\begin{document}
+\pagestyle{empty}
+
+\include{titulniStrana}
+
+\clearpage
+
+% === Nastavení obsahů pro dokumenty ===
+% tabulka s obsahem
+\tableofcontents
+
+% seznam zkratek
+% pouze u většího množství zkratek
+\include{seznamZkratek}
+
+% seznam tabulek
+% pouze pokud jsou použity více jak tři tabulky
+\newpage
+\listoftables
+\thispagestyle{empty}
+
+% seznam obrázků
+% pouze pokud jsou použity více jak tři obrázky
+\newpage
+\listoffigures
+\thispagestyle{empty}
+
+\newpage
+
+% Nastavení čísla strany
+\setcounter{page}{1}
+\thispagestyle{empty}
+%\pagestyle{empty}
+
+% === Nastavení záhlaví a zápatí stránek ===
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.5pt} %bez linky v zahlavi
+\renewcommand{\footrulewidth}{0pt} %linka v zapati
+\lhead{\leftmark}       \chead{} \rhead{} %pole zahlavi (prazdna)
+\lfoot{} \cfoot{} \rfoot{\thepage} %pole zapati
+
+% vložení textu práce
+\include{projekt1}
+\include{projekt2}
+
+% === Zdroje seřazené abecedně ===
+\phantomsection % přidání odkazu do PDF záložek
+\addcontentsline{toc}{section}{Seznam použitých zdrojů}
+\renewcommand{\refname}{Seznam použitých zdrojů}
+
+\bibliographystyle{czplain}
+\bibliography{out}
+
+\end{document}
