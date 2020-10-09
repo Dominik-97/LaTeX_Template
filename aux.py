@@ -41,7 +41,7 @@ def nonbreaking_space(fname):
 
     return text
 
-if sys.argv[1] is "1":
+if sys.argv[1] == "1":
     print(url_worker(sys.argv[2]))
 else:
     print(nonbreaking_space(sys.argv[2]))
