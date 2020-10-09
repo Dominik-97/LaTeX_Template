@@ -14,11 +14,15 @@
 
 **project.tex** - basic definitions - edit your paper info here <br>
 **project1.tex** - write your paper in this file <br>
-**project2.tex** - you can write another part of your paper in this file, or you can use only project1.tex <br>
-> edit this in project.tex - remove/add include files starting from line 109 <br>
+**project2.tex** - you can write another part of your paper in this file, or you can use only project1.tex
+
+> edit this in project.tex - remove/add include files starting from line 109
+
 **seznamZkratek.tex** - list of abbreviations used in your paper, add them here <br>
-**titulniStrana.tex** - title page definition - you can create your desired design here, or you can keep the default setting, you can edit variables for title page in project.tex <br>
-> edit this in project.tex - edit variables starting from line 29 <br>
+**titulniStrana.tex** - title page definition - you can create your desired design here, or you can keep the default setting, you can edit variables for title page in project.tex
+
+> edit this in project.tex - edit variables starting from line 29
+
 **Makefile** - use this to compile your paper <br>
 **pics/** - directory for images <br>
 **aux.py** - using some regex magic, it makes your final output look better
