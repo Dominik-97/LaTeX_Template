@@ -1,62 +1,30 @@
-# Automatizovaný převod zvuku do znakového záznamu
+# A basic LaTeX template I got and slightly changed which I decided to use for some of my lower scale projects
 
-## Automatic conversion between tone and character record
+### Required software
+1. some TeX distribution, I use MacTeX which comes with pdflatex compiler which I use to compile
+2. Make
+3. Python, version 3 or newer
+3. bibtex
+4. qpdf
 
-### Cíle práce:
-Cílem práce bude popsat metody (transkripce) pro převod zvukového záznamu do textové formy (akordy, taby) a obráceně. Dále navrhnout a realizovat možné softwarové řešení této problematiky. Na závěr bude vyhodnocena spolehlivost převodu (transkripce) a definovány zjištěné specifické problémy spolu s návrhem na jejich minimalizaci do budoucna.
-
-### Metodika:
-1. Úvod
-2. Cíl práce a metodika
-3. Teoretická část
-  - 3.1 Základní pojmy (vlastnosti hudebních signálů, zvukové formáty)
-  - 3.2 Metody transkripce zvukového záznamu
-4. Praktická část
-  - 4.1 Generování tónů z předpisu
-  - 4.2 Vytvoření předpisu z tónů
-  - 4.3 Vyhodnocení spolehlivosti převodu
-5. Výsledky a závěr
-
-### Klíčová slova:
-zvuk, automatizace transkripce, notový záznam
-
-## Úvod
-
-## Cíl práce a metodika
-
-## Teoretická část
-
-## Praktická část
-
-## Výsledky a závěr
-
-## Zdroje
-
-## Check
-- [ ] [stackoverflow generate sound](https://stackoverflow.com/questions/11814238/how-to-generate-a-real-bass-guitar-sound-either-in-c-c-or-java)
-
-- [ ] [The Synthesis ToolKit in C++ (STK)](https://ccrma.stanford.edu/software/stk/)
-
-- [ ] [TiMidity++ software synthetizer](http://timidity.sourceforge.net/#info)
-
-- [ ] [SoundFont](https://en.m.wikipedia.org/wiki/SoundFont#Free_SoundFont_downloads)
-
-- [ ] [stackoverflow midi to wav](https://stackoverflow.com/questions/1185392/how-can-i-convert-between-midi-to-wav-mp3-in-c)
-
-- [ ] [github project 1](https://github.com/FlatAssembler/Notes-To-WAV-converter/blob/master/convertNotesToWAV.cpp)
-
-- [ ] [github project 2](https://github.com/thesepehrm/SepehrNoteEngine/blob/master/sample.cpp)
-
-- [ ] [github project 3](https://github.com/topics/music-notation?l=c%2B%2B)
-
-- [ ] [github project 4](https://github.com/cycfi/q)
-
-- [ ] [python lib](https://jythonmusic.me/ch-2-elements-of-music-and-code/)
-
-- [ ] [stránky vysvětlující problematiku v kódu](http://digitalsoundandmusic.com/3-3-5-experimenting-with-music-in-c/)
-
-- [ ] [vysvětlení FFT v kódu](https://www.codeproject.com/Articles/32172/FFT-Guitar-Tuner)
+### Not required but nice to have software
+1. evince, you can always use Adobe or Preview
 
 ## Struktura repozitáře
 
-Zapisuje se do projekt1 a projekt2, bin si vytvoří makefile sám.
+**project.tex** - basic definitions - edit your paper info here <br>
+**project1.tex** - write your paper in this file <br>
+**project2.tex** - you can write another part of your paper in this file, or you can use only project1.tex <br>
+> edit this in project.tex - remove/add include files starting from line 109 <br>
+**seznamZkratek.tex** - list of abbreviations used in your paper, add them here <br>
+**titulniStrana.tex** - title page definition - you can create your desired design here, or you can keep the default setting, you can edit variables for title page in project.tex <br>
+> edit this in project.tex - edit variables starting from line 29 <br>
+**Makefile** - use this to compile your paper <br>
+**pics/** - directory for images <br>
+**aux.py** - using some regex magic, it makes your final output look better
+
+## How to compile
+
+Run `Make help` to display help. <br>
+If you want to compile your paper run `Make build` <br>
+If you then want to delete generated `bin` directory, run `Make clean` - your output will still be in your root and it will not be deleted, do not worry about that.

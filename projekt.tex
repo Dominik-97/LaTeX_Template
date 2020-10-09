@@ -11,37 +11,37 @@
 \usepackage{tabularx}
 \usepackage{graphicx}
 
-% Více řádků v jednom pro tabulku
+% More rows in one table (one row as multiple rows)
 \usepackage{multirow}
 
-% Pro tečkovanou čáru pro podpis
+% Dotted line for a signature
 \usepackage{arydshln}
 
 \usepackage[none]{hyphenat} \sloppy
 \clubpenalty 10000
 \widowpenalty 10000
 
-% Nastavení řádkování
+% Line space settings
 \usepackage{setspace} \onehalfspacing
 
 \usepackage{enumerate}
 
-% === Nastavení hlavních proměnných ===
-\newcommand{\autor}{}
-\newcommand{\skola}{}
-\newcommand{\fakulta}{}
-\newcommand{\nazev}{}
-\newcommand{\typPrace}{}
-\newcommand{\vedouciPrace}{}
+% === Setting up main parameters ===
+\newcommand{\autor}{}           % <-- Author
+\newcommand{\skola}{}           % <-- Univerzity
+\newcommand{\fakulta}{}         % <-- Faculty
+\newcommand{\nazev}{}           % <-- Title
+\newcommand{\typPrace}{}        % <-- Paper type
+\newcommand{\vedouciPrace}{}    % <-- Lead
 
-% Nastavení prolinkování odkazů v dokumentu
+% PDF metadata setting
 \usepackage[pdftex,
-            pdfauthor={Jméno},
-            pdftitle={Title},
-            pdfsubject={},
-            pdfkeywords={},
-            pdfproducer={Univerzita},
-            pdfcreator={pdflatex}]{hyperref}
+            pdfauthor={Jméno},                  % <-- PDF Author
+            pdftitle={Title},                   % <-- PDF Title
+            pdfsubject={},                      % <-- PDF Subject
+            pdfkeywords={},                     % <-- PDF Keywords
+            pdfproducer={Univerzita},           % <-- PDF Producer
+            pdfcreator={pdflatex}]{hyperref}    % <-- PDR Creator
 
 \hypersetup{
     colorlinks = false,
@@ -51,20 +51,20 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 
-% Nastavení cesty k obrázkům
+% Image folder location
 \graphicspath{{pics/}}
 
-% Funkce pro vkládání grafů
+% Charts package
 \usepackage{float}
 \newfloat{graf}{hbtp}{ext}
 \floatname{graf}{Graf}
 
-% Pojmenovaní obrázku
+% Image names
 \usepackage{caption}
 \captionsetup[figure]{name=Obr.}
 
 
-% === Začátek dokumentu ===
+% === Beginning of the body of the document ===
 \begin{document}
 \pagestyle{empty}
 
@@ -72,46 +72,46 @@
 
 \clearpage
 
-% === Nastavení obsahů pro dokumenty ===
-% tabulka s obsahem
+% === File contents setting ===
+% Table of contents
 \tableofcontents
 
-% seznam zkratek
-% pouze u většího množství zkratek
+% Table of abbreviations
+% Generally if you have more than five
 \include{seznamZkratek}
 
-% seznam tabulek
-% pouze pokud jsou použity více jak tři tabulky
+% List of tables
+% Generally if you have more than three tables
 \newpage
 \listoftables
 \thispagestyle{empty}
 
-% seznam obrázků
-% pouze pokud jsou použity více jak tři obrázky
+% List of images
+% Generally if you have more than three images
 \newpage
 \listoffigures
 \thispagestyle{empty}
 
 \newpage
 
-% Nastavení čísla strany
+% Page numbering setting
 \setcounter{page}{1}
 \thispagestyle{empty}
 %\pagestyle{empty}
 
-% === Nastavení záhlaví a zápatí stránek ===
+% === Page header and page footer settings ===
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.5pt} %bez linky v zahlavi
 \renewcommand{\footrulewidth}{0pt} %linka v zapati
 \lhead{\leftmark}       \chead{} \rhead{} %pole zahlavi (prazdna)
 \lfoot{} \cfoot{} \rfoot{\thepage} %pole zapati
 
-% vložení textu práce
+% Including files containing your data, you can add more by defining new \include and creating a .tex file with the same name
 \include{projekt1}
 \include{projekt2}
 
-% === Zdroje seřazené abecedně ===
-\phantomsection % přidání odkazu do PDF záložek
+% === Bibliography list, ordered alphabetically ===
+\phantomsection % PDF list links
 \addcontentsline{toc}{section}{Seznam použitých zdrojů}
 \renewcommand{\refname}{Seznam použitých zdrojů}
 
