@@ -157,3 +157,6 @@ help:
 	 echo "clear:    Delete all generated files."; \
 	 echo "clean:    Delete all temporary files."; \
 	 echo "help:     Print help for Makefile."
+
+# Generate PDF and remove bin
+all: build clean
