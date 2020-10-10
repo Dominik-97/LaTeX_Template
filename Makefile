@@ -25,12 +25,12 @@ folder = bin
 # |------------------------------------------------------|
 
 # | ----------- | ------------------------------ |
-# | Command 		| Execution order								 |
+# | Command     | Execution order                |
 # | ----------- | ------------------------------ |
-# | Make				| build -> run -> clean -> clear |
-# | Make build	| build													 |
-# | Make clear	| clean -> clear								 |
-# | Make clean	| clear													 |
+# | Make        | build -> run -> clean -> clear |
+# | Make build	| build                          |
+# | Make clear	| clean -> clear                 |
+# | Make clean	| clear                          |
 # | ----------- | ------------------------------ |
 
 # |-----------------------------------------------------------------------------------|
