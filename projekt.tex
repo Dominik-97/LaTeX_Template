@@ -63,9 +63,14 @@
 \usepackage{caption}
 \captionsetup[figure]{name=Obr.}
 
+% ===
 % Used to include url in BibTeX, more here: http://www.fit.vutbr.cz/~martinek/latex/czechiso.html
 \usepackage{url}
 \DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+
+% Declaring trademark symbols
+\usepackage{textcomp}
+% ===
 
 % === Beginning of the body of the document ===
 \begin{document}
@@ -118,7 +123,7 @@
 \addcontentsline{toc}{section}{Seznam použitých zdrojů}
 \renewcommand{\refname}{Seznam použitých zdrojů}
 
-\bibliographystyle{acm} %czplain
+\bibliographystyle{unsrt} %acm czplain
 \bibliography{out}
 
 \end{document}
