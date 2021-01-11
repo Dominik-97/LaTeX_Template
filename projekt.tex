@@ -27,20 +27,20 @@
 \usepackage{enumerate}
 
 % === Setting up main parameters ===
-\newcommand{\autor}{}           % <-- Author
-\newcommand{\skola}{}           % <-- Univerzity
-\newcommand{\fakulta}{}         % <-- Faculty
-\newcommand{\nazev}{}           % <-- Title
-\newcommand{\typPrace}{}        % <-- Paper type
-\newcommand{\vedouciPrace}{}    % <-- Lead
+\newcommand{\autor}{Dominik Bálint}           % <-- Author
+\newcommand{\skola}{CEVRO Institut}           % <-- Univerzity
+\newcommand{\fakulta}{Právo v obchodních vztazích}         % <-- Faculty
+\newcommand{\nazev}{Disinformace ve světle světové pandemie}           % <-- Title
+\newcommand{\typPrace}{Seminární práce}        % <-- Paper type
+%\newcommand{\vedouciPrace}{}    % <-- Lead
 
 % PDF metadata setting
 \usepackage[pdftex,
-            pdfauthor={Jméno},                  % <-- PDF Author
-            pdftitle={Title},                   % <-- PDF Title
+            pdfauthor={dominikbalint},                  % <-- PDF Author
+            pdftitle={disinformace\_ve\_svetle\_svetove\_pandemie},                   % <-- PDF Title
             pdfsubject={},                      % <-- PDF Subject
             pdfkeywords={},                     % <-- PDF Keywords
-            pdfproducer={Univerzita},           % <-- PDF Producer
+            pdfproducer={CEVRO Institut},           % <-- PDF Producer
             pdfcreator={pdflatex}]{hyperref}    % <-- PDR Creator
 
 \hypersetup{
@@ -63,6 +63,9 @@
 \usepackage{caption}
 \captionsetup[figure]{name=Obr.}
 
+% Used to include url in BibTeX, more here: http://www.fit.vutbr.cz/~martinek/latex/czechiso.html
+\usepackage{url}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
 
 % === Beginning of the body of the document ===
 \begin{document}
@@ -78,19 +81,19 @@
 
 % Table of abbreviations
 % Generally if you have more than five
-\include{seznamZkratek}
+% \include{seznamZkratek}
 
 % List of tables
 % Generally if you have more than three tables
-\newpage
-\listoftables
-\thispagestyle{empty}
+%\newpage
+%\listoftables
+%\thispagestyle{empty}
 
 % List of images
 % Generally if you have more than three images
-\newpage
-\listoffigures
-\thispagestyle{empty}
+%\newpage
+%\listoffigures
+%\thispagestyle{empty}
 
 \newpage
 
@@ -108,7 +111,7 @@
 
 % Including files containing your data, you can add more by defining new \include and creating a .tex file with the same name
 \include{projekt1}
-\include{projekt2}
+%\include{projekt2}
 
 % === Bibliography list, ordered alphabetically ===
 \phantomsection % PDF list links
