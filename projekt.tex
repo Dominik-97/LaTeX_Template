@@ -70,6 +70,29 @@
 
 % Declaring trademark symbols
 \usepackage{textcomp}
+
+% Declaring for the use of coloured boxes
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[breakable, theorems, skins]{tcolorbox}
+\tcbset{enhanced}
+
+\DeclareRobustCommand{\mybox}[2][gray!20]{%
+\begin{tcolorbox}[   %% Adjust the following parameters at will.
+        breakable,
+        left=0pt,
+        right=0pt,
+        top=0pt,
+        bottom=0pt,
+        colback=#1,
+        colframe=#1,
+        width=\dimexpr\textwidth\relax, 
+        enlarge left by=0mm,
+        boxsep=5pt,
+        arc=0pt,outer arc=0pt,
+        ]
+        #2
+\end{tcolorbox}
+}
 % ===
 
 % === Beginning of the body of the document ===
@@ -96,9 +119,9 @@
 
 % List of images
 % Generally if you have more than three images
-%\newpage
-%\listoffigures
-%\thispagestyle{empty}
+\newpage
+\listoffigures
+\thispagestyle{empty}
 
 \newpage
 
